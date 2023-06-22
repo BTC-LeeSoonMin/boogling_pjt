@@ -123,7 +123,7 @@ const KakaoMapDetail = ({ AptFilteredArray }) => {
     };
   }, [addressName]);
 
-  return <li id="map" style={{ width: "500px", height: "500px" }}></li>;
+  return <li id="map" style={{ width: "500px", height: "650px" }}></li>;
 };
 
 export default KakaoMapDetail;

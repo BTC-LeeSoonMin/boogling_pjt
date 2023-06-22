@@ -40,7 +40,7 @@ const Favorites = ({ userDB, setUserDB, signInedMember, item }) => {
         ""
       ))
       ) :
-        <div>즐겨찾기 없음</div>
+        <div className="defualt">즐겨찾기 없음</div>
       }
     </div>
   );
