@@ -25,26 +25,24 @@ const Favorites = ({ userDB, setUserDB, signInedMember, item }) => {
       setLocalDataList(dataArray);
     }
   }, []);
-
+  console.log("localDataKist------------------->", localDataList)
   // let member = userDB.get(signInedMember.current);
 
   return (
-    <>
-      {localDataList !== '' ?
-        (localDataList.map((item, idx) =>
-          idx <= 7 ? (
-            <div className="wishlist_main">
-              <div>
-                <Link to={`/apt_detail/${item}`}>{item}</Link>
-              </div>
-            </div>
-          ) : (
-            ""
-          )
-        )) : (
-          <div>즐겨찾기 없음</div>
-        )}
-    </>
+    <div className="wishlist_main">
+      {localDataList != '' ? (localDataList.map((item, idx) => idx <= 7 ? (
+        <div className="wishlist_main">
+          {/* <div> */}
+          <Link to={`/apt_detail/${item}`}>{item}</Link>
+        </div>
+        // </div>
+      ) : (
+        ""
+      ))
+      ) :
+        <div>즐겨찾기 없음</div>
+      }
+    </div>
   );
 };
 

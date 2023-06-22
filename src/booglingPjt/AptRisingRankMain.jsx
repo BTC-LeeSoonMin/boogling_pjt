@@ -107,7 +107,7 @@ const AptRisingRankMain = ({ item }) => {
                 AptRisingNameAndPriceResult.map((item, idx) => (
                     idx <= 4 ?
                         <div className="apt_rankingRisinglist">
-                            <span>{item.name}</span>
+                            <span>{item.name}m<sup>2</sup></span>
                             <ul>
 
                                 <li>
@@ -117,7 +117,7 @@ const AptRisingRankMain = ({ item }) => {
                                     <span>{item.diffPercent} </span>
                                 </li>
                                 <li>
-                                    <span>{item.value}만</span>
+                                    <span>{item.value.toLocaleString()}만</span>
                                 </li>
                             </ul>
                         </div>

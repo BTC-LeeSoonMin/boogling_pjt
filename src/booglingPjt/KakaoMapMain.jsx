@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const { kakao } = window;
+// import { useNavigate } from "react-router-dom";
+// import AptDetail from "./route/AptDetail";
 
 const KakaoMapMain = ({ item }) => {
   let apartComposition;
-  // let apartNameComposition;
-
+  let apartNameComposition;
+  // const history = useHistory();
   const addressName = [];
-
+  const apartName = [];
+  const navigate = useNavigate();
   // console.log("---------->", item);
+
 
   if (item) {
     item.forEach(function (item) {
@@ -24,6 +30,17 @@ const KakaoMapMain = ({ item }) => {
     });
   }
 
+  if (item) {
+    item.forEach(function (item) {
+      item.forEach(function (item2) {
+        apartNameComposition =
+          item2.아파트;
+        apartName.push(apartNameComposition);
+        // console.log("아파트 가격과 거래금액------>", apartNameAndPrice)
+      });
+    });
+  }
+
   // console.log("--------> ")
 
   useEffect(() => {
@@ -31,7 +48,7 @@ const KakaoMapMain = ({ item }) => {
     var mapOption = {
       center: new kakao.maps.LatLng(35.1795543, 129.0756416), // 지도의 중심좌표
 
-      level: 5, // 지도의 확대 레벨
+      level: 8, // 지도의 확대 레벨
     };
     var map = new kakao.maps.Map(mapContainer, mapOption);
 
@@ -39,26 +56,32 @@ const KakaoMapMain = ({ item }) => {
       map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체
       // averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정
       minLevel: 5, // 클러스터 할 최소 지도 레벨
-
     });
 
     // 마커에 마우스 이벤트 리스너 추가
-    const addMarkerMouseEvents = (marker, infowindow) => {
-      // 마우스를 올렸을 때 정보 창 열기
-      kakao.maps.event.addListener(marker, "click", function () {
-        infowindow.open(map, marker);
-      });
+    // const addMarkerMouseEvents = (marker, infowindow) => {
+    //   // 마우스를 올렸을 때 정보 창 열기
+    //   kakao.maps.event.addListener(marker, "click", function () {
+    //     infowindow.open(map, marker);
+    //     for (let i = 0; i < addressName.length; i++) {
+    //       return navigate(`/apt_detail/${addressName[i].}`);
+    //     }
+    //     // window.location.href = `/apt_detail/${apartName[i]}`;
 
-      // 마우스를 뗄 때 정보 창 닫기
-      kakao.maps.event.addListener(marker, "mouseout", function () {
-        infowindow.close();
-      });
-    };
+    //     // history.push(`/apt_detail/${item}`)
+    //   });
+
+    //   // 마우스를 뗄 때 정보 창 닫기
+    //   kakao.maps.event.addListener(marker, "mouseout", function () {
+    //     infowindow.close();
+    //   });
+    // };
 
     let geocoder = new kakao.maps.services.Geocoder();
 
     for (let i = 0; i < addressName.length; i++) {
       // console.log("두번째-------------->", );
+      // let arr=addressName[i]
       geocoder.addressSearch(addressName[i], function (result, status) {
         if (status === kakao.maps.services.Status.OK) {
           const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
@@ -68,9 +91,27 @@ const KakaoMapMain = ({ item }) => {
           });
           const infowindow = new kakao.maps.InfoWindow({
             content: `<div style="width:150px;text-align:center;padding:6px 0;">${addressName[i]}</div>`,
+            // content: `<Link to=/apt_detail/${addressName[i]}><div style="width:150px;text-align:center;padding:6px 0;">${addressName[i]}</div></Link>`,
           });
-
+          // console.log("두번째-------------->", apartName[i]);
           // 마커에 마우스 이벤트 리스너 추가
+          const addMarkerMouseEvents = (marker, infowindow) => {
+            // 마우스를 올렸을 때 정보 창 열기
+
+            kakao.maps.event.addListener(marker, "mouseover", function () {
+              infowindow.open(map, marker);
+            });
+
+            kakao.maps.event.addListener(marker, "click", function () {
+              return navigate(`/apt_detail/${apartName[i]}`);
+
+            });
+
+            // 마우스를 뗄 때 정보 창 닫기
+            kakao.maps.event.addListener(marker, "mouseout", function () {
+              infowindow.close();
+            });
+          };
           addMarkerMouseEvents(marker, infowindow);
 
           // clusterer.addMarker(marker); // 클러스터에 마커 추가
