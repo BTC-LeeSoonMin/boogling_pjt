@@ -26,7 +26,9 @@ const Main = ({ item, realTimeSearch, userDB, signInedMember }) => {
           </li>
 
           <li className="view">
-            {item.length !== 0 ? <FavoritesList item={item} userDB={userDB} signInedMember={signInedMember} /> : null}
+            {item.length !== 0 ?
+              <FavoritesList item={item} userDB={userDB} signInedMember={signInedMember} />
+              : null}
             <div className="real_time_search">
               <div className="real_time_search_title">나의 검색 내역</div>
               <div className="real_time_search_main">

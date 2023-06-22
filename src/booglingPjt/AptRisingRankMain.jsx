@@ -70,11 +70,23 @@ const AptRisingRankMain = ({ item }) => {
 
     console.log("최종 금액 표시--------", AptRisingNameAndPrice);
 
-    AptRisingNameAndPrice.sort((a, b) => b.value - a.value);
+    let SortedAptRisingNameAndPrice = AptRisingNameAndPrice.sort((a, b) => {
+        // 절대값으로 비교하기 위해 Math.abs() 함수를 사용합니다.
+        const diffPercentA = Math.abs(parseFloat(a.diffPercent));
+        const diffPercentB = Math.abs(parseFloat(b.diffPercent));
+
+        // 내림차순으로 정렬하기 위해 b - a를 반환합니다.
+        return diffPercentB - diffPercentA;
+    });
+
+
+    // AptRisingNameAndPrice.map(num => ({ value: num, absoluteValue: Math.abs(num) }));
+    // AptRisingNameAndPrice.sort((a, b) => Math.abs(b.diffPercent) - Math.abs(a.diffPercent));
+    // AptRisingNameAndPrice.sort((a, b) => b.absoluteValue - a.absoluteValue);
 
     console.log("아파트 가격 차이 정렬된 것------------->", AptRisingNameAndPrice);
 
-    const AptRisingNameAndPriceResult = AptRisingNameAndPrice.map(item => {
+    const AptRisingNameAndPriceResult = SortedAptRisingNameAndPrice.map(item => {
         const splitName = item.name.split(' ');
         const name = splitName.slice(1).join(' ');
         const diffPercent = item.diffPercent;
