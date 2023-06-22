@@ -1,13 +1,8 @@
 main {
-  /* background-color: #5fa4ed8c; */
   margin: 5px auto;
   height: 900px;
 }
 
-/* main div.main ul li.logo {
-  max-width: 10px;
-  min-width: 10px;
-} */
 
 main div.main ul.main_ul {
   display: flex;
@@ -21,10 +16,6 @@ main div.main li.map {
 main div.main li.view {
   width: 220px;
   margin: 0 20px;
-}
-
-main div.apt_ranking_main {
-  margin-top: 20;
 }
 
 main div.apt_ranking,
@@ -55,15 +46,18 @@ main div.wishlist_title a {
   font-weight: bold;
 }
 
-main div.apt_ranking_main>div,
-main div.apt_top_main>div,
 main div.wishlist_main>div,
 main div.real_time_search_main>div {
   border-top: 1px solid #dadada;
-  padding-top: 5px;
-  /* padding-bottom: 7px; */
+  padding: 7px 0;
+  overflow: hidden;
 }
 
+main div.apt_rankinglist,
+main div.apt_rankingRisinglist {
+  border-top: 1px solid #dadada;
+  padding: 8px 0;
+}
 
 main div.defualt {
   text-align: center;
@@ -76,29 +70,7 @@ main div.log {
   padding-top: 7px;
 }
 
-main div.wishlist_main>div,
-main div.real_time_search_main>div {
-  padding-bottom: 7px;
-}
-
-main div.apt_rankinglist,
-main div.wishlist_list {
-  margin-bottom: 10px;
-}
-
-main div.wishlist_list {
-  margin-bottom: 10px;
-}
-
-main div.wishlist_main a,
-main div.apt_ranking_title a {
-  /* font-weight: bold; */
-  font-size: 1em;
-  font-weight: 200;
-}
-
 main div.main li.view li {
-  margin-top: 3px;
   margin-right: 10px;
 }
 
