@@ -1,15 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const AptRisingRankMain = ({ item }) => {
-
-
-
     let apartNameAndPriceComposition2022;
     let apartNameAndPrice2022 = [];
 
     let apartNameAndPriceComposition2023;
     let apartNameAndPrice2023 = [];
-
 
     console.log("***Risingitem------------->****", item);
     if (item) {
@@ -68,7 +64,9 @@ const AptRisingRankMain = ({ item }) => {
         return value !== null; // null 값을 필터링하여 제외
     });
 
+
     console.log("최종 금액 표시--------", AptRisingNameAndPrice);
+
 
     let SortedAptRisingNameAndPrice = AptRisingNameAndPrice.sort((a, b) => {
         // 절대값으로 비교하기 위해 Math.abs() 함수를 사용합니다.
@@ -84,6 +82,9 @@ const AptRisingRankMain = ({ item }) => {
     // AptRisingNameAndPrice.sort((a, b) => Math.abs(b.diffPercent) - Math.abs(a.diffPercent));
     // AptRisingNameAndPrice.sort((a, b) => b.absoluteValue - a.absoluteValue);
 
+
+
+
     console.log("아파트 가격 차이 정렬된 것------------->", AptRisingNameAndPrice);
 
     const AptRisingNameAndPriceResult = SortedAptRisingNameAndPrice.map(item => {
@@ -96,7 +97,6 @@ const AptRisingRankMain = ({ item }) => {
 
     console.log("잘라낸 결과-------------->", AptRisingNameAndPriceResult);
 
-
     // apartPrice2022 = resultArray2022.map(item => item.value);
     // console.log("2022년 가격모음------------>", apartPrice2022);
 
@@ -107,7 +107,7 @@ const AptRisingRankMain = ({ item }) => {
                 AptRisingNameAndPriceResult.map((item, idx) => (
                     idx <= 4 ?
                         <div className="apt_rankingRisinglist">
-                            <Link>{item.name}</Link>
+                            <span>{item.name}</span>
                             <ul>
 
                                 <li>

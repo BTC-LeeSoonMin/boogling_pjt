@@ -1,8 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #5fa4ed8c;
 }
 
+/* 메뉴바 상단 고정 START */
+/* z-index: index.css에서 메뉴바 상단 고정시 지도 위로 보일 수 있게 하기 위함 */
+div.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+/* 메뉴바 상단 고정 END */
+
+/* footer 하단에 고정 START */
+html,
+body {
+  /* margin: 0;
+  padding: 0; */
+  height: 100%;
+}
+
+div.wrap {
+  min-height: calc(100vh - 10rem); /* footer 높이를 빼준다. */
+  /* background: pink; */
+  min-height: 100%;
+  /* position: relative; */
+  /* background: pink; */
+}
+/* footer 하단에 고정 END */
+
 /*nav 시작*/
+
 nav {
   height: 100px;
   /* background-color: #5fa4ed8c; */
@@ -49,7 +82,6 @@ nav div.bar > ul.bar_ul > li.btn a {
   color: #fff;
   font-size: 1.2em;
 }
-
 
 nav div.bar > ul.bar_ul > li.btn a {
   margin-right: 100px;
@@ -138,11 +170,15 @@ ul.pagination li a.active {
 /* pagination 끝 */
 
 footer {
-  margin-top: 100px;
+  width: 100%;
+  padding-top: 50px;
   margin-bottom: 30px;
   font-size: 0.8em;
   color: #5b5b5b;
   text-align: center;
+  height: 8em; /* footer 높이 */
+  bottom: 0px;
+  position: absolute;
 }
 
 footer a {

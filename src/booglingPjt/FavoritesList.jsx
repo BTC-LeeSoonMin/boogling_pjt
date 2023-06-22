@@ -12,8 +12,9 @@ const FavoritesList = ({ userDB, setUserDB, signInedMember, item }) => {
             <div className="wishlist_title">
                 즐겨찾기
             </div>
-            {<Favorites item={item} userDB={userDB} signInedMember={signInedMember} />}
+            <Favorites item={item} userDB={userDB} signInedMember={signInedMember} />
 
+            {/* <div>즐겨찾기 없음</div> */}
         </div>
     );
 };

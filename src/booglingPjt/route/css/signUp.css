@@ -1,6 +1,15 @@
+section {
+  height: 900px;
+}
+
+section > div.section_wrap {
+  height: 900px;
+}
+
 section > div.section_wrap > div.sign_up {
-  margin: 100px auto;
-  width: 400px;
+  margin: 30px auto;
+  width: 450px;
+  /* height: 800px; */
   display: flex;
   flex-direction: column;
   justify-content: center;

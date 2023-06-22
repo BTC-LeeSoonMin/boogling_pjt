@@ -1,7 +1,7 @@
 section > div.modify_section_wrap > div.modify {
   /* position: relative; */
   margin: 50px auto;
-  width: 400px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +28,7 @@ section > div.modify_section_wrap > div.modify input {
 }
 
 section > div.modify_section_wrap > div.modify input.m_name {
-background-color: #dadada68;
+  background-color: #dadada68;
 }
 
 div.btn {

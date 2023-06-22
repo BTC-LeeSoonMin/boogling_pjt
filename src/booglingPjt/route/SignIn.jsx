@@ -19,6 +19,7 @@ const SignIn = ({ userDB, signInedMember, setLoginedSession }) => {
     // const U_pw = userDB.get(m_id).m_pw;
     console.log("m_id: ", userDB.get(m_id));
 
+    // 로그인한 아이디와 비밀번호가 입력한 비밀번호와 일치할 때 로그인
     if (userDB.has(m_id) && userDB.get(m_id).m_pw === m_pw) {
       console.log("[UserSignIn] SIGN-IN SUCCESS!!");
 
@@ -27,7 +28,7 @@ const SignIn = ({ userDB, signInedMember, setLoginedSession }) => {
       signInedMember.current = m_id;
       setLoginedSession();
 
-      navigate("/");
+      navigate("/"); // 로그인시 메인 페이지로 이동
     } else if (m_id == "" && m_pw == "") {
       alert("아이디와 비밀번호를 입력해주세요.");
     } else if (!userDB.has(m_id)) {
@@ -51,7 +52,9 @@ const SignIn = ({ userDB, signInedMember, setLoginedSession }) => {
     <section>
       <div class="section_wrap">
         <div class="sign_in">
-          <div className="sign_in_title"><span>로그인</span></div>
+          <div className="sign_in_title">
+            <span>로그인</span>
+          </div>
           <input
             type="text"
             name="m_id"

@@ -1,6 +1,6 @@
 section div.search_main {
   width: 900px;
-  margin: 0 auto;
+  margin: 30px auto;
   background-color: #fff;
   border-radius: 20px;
 }
@@ -45,7 +45,9 @@ section div.search_list a {
 }
 
 section div.page {
-  margin-top: 15px;
+  /* margin-top: 15px; */
   display: flex;
   justify-content: center;
+  /* background-color: #9c1c1c; */
+  padding-bottom: 15px;
 }

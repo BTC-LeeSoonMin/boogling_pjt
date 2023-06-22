@@ -35,13 +35,11 @@ const Main = ({ item, realTimeSearch, userDB, signInedMember }) => {
                 {realTimeSearch != "" ? (
                   realTimeSearch.map((element) => {
                     return (
-                      <div>
-                        <a href="#none">{element}</a>
-                      </div>
+                      <div className="log">{element}</div>
                     );
                   })
                 ) : (
-                  <div>검색내역 없음</div>
+                  <div className="defualt">검색내역 없음</div>
                 )}
               </div>
             </div>

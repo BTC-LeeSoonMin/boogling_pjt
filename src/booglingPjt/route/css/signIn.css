@@ -1,6 +1,6 @@
 section > div.section_wrap > div.sign_in {
   /* position: relative; */
-  margin: 100px auto;
+  margin: 70px auto;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ section > div.section_wrap > div.sign_in {
 section div.sign_in_title {
   margin-bottom: 50px;
 }
-section div.sign_in_title span{
+section div.sign_in_title span {
   font-weight: bold;
   font-size: 1.5em;
   color: rgba(0, 0, 0, 0.726);

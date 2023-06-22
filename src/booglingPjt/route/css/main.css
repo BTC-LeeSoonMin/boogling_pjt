@@ -1,6 +1,7 @@
 main {
   /* background-color: #5fa4ed8c; */
   margin: 5px auto;
+  height: 900px;
 }
 
 /* main div.main ul li.logo {
@@ -59,12 +60,29 @@ main div.apt_top_main>div,
 main div.wishlist_main>div,
 main div.real_time_search_main>div {
   border-top: 1px solid #dadada;
+  padding-top: 5px;
+  /* padding-bottom: 7px; */
+}
+
+
+main div.defualt {
+  text-align: center;
+  border-top: 1px solid #dadada;
   padding-top: 7px;
 }
 
-main div.apt_ranking_main ul,
-main div.apt_top_main ul,
-main div.wishlist_main ul {
+main div.log {
+  border-top: 1px solid #dadada;
+  padding-top: 7px;
+}
+
+main div.wishlist_main>div,
+main div.real_time_search_main>div {
+  padding-bottom: 7px;
+}
+
+main div.apt_rankinglist,
+main div.wishlist_list {
   margin-bottom: 10px;
 }
 
@@ -73,9 +91,7 @@ main div.wishlist_list {
 }
 
 main div.wishlist_main a,
-main div.apt_top_main a,
-main div.apt_ranking_title a,
-main div.real_time_search_title a {
+main div.apt_ranking_title a {
   /* font-weight: bold; */
   font-size: 1em;
   font-weight: 200;
@@ -86,8 +102,10 @@ main div.main li.view li {
   margin-right: 10px;
 }
 
+/* z-index: index.css에서 메뉴바 상단 고정시 지도 위로 보일 수 있게 하기 위함 */
 main div.main li.map li {
   border-radius: 10px;
+  z-index: 1;
 }
 
 main p.increase {

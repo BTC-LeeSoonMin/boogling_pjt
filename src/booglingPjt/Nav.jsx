@@ -73,7 +73,7 @@ const Nav = forwardRef(
           <ul className="bar_ul">
             <li className="logo">
               <Link to="/">
-                <img src="./imgs/부글링글자만.png" />
+                <img src="../imgs/부글링글자만.png" />
               </Link>
             </li>
             <li className="sign_up">
