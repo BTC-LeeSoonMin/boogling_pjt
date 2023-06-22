@@ -105,7 +105,7 @@ const Search = ({ item }) => {
             <li>아파트</li>
             <li>주소</li>
             <li>거래가격</li>
-            <li className="area">면적</li>
+            <li className="area">면적(m<sup>2)</sup></li>
             <li className="floor">층수</li>
           </ul>
 
