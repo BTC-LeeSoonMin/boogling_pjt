@@ -14,7 +14,7 @@ main div.main li.map {
 }
 
 main div.main li.view {
-  width: 220px;
+  width: 280px;
   margin: 0 20px;
 }
 
@@ -53,10 +53,14 @@ main div.real_time_search_main>div {
   overflow: hidden;
 }
 
-main div.apt_rankinglist,
-main div.apt_rankingRisinglist {
+main div.apt_rankinglist {
   border-top: 1px solid #dadada;
   padding: 8px 0;
+}
+
+main div.apt_rankingRisinglist {
+  border-top: 1px solid #dadada;
+  padding: 5px 0;
 }
 
 main div.defualt {

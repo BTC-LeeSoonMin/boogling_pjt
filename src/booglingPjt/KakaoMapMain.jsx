@@ -135,7 +135,7 @@ const KakaoMapMain = ({ item }) => {
     // }
   }, [addressName]);
 
-  return <li id="map" style={{ width: "1000px", height: "725px" }}></li>;
+  return <li id="map" style={{ width: "880px", height: "725px" }}></li>;
 };
 
 export default KakaoMapMain;

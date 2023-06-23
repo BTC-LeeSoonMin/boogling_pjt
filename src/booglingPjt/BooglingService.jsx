@@ -30,7 +30,7 @@ const serviceKey =
 // "RvgsyTk%2Flok04ktoqe2PPV7OVvyVTLa7IwjiW2%2F0FQTxVKe8SjNYZUpLpn3WFYskzMW0jsHeiehpwUeVIJnLkw%3D%3D";
 
 const pageNo = 1; // 페이지 번호(옵션)
-const numOfRows = 70; // 한 페이지 결과 수(옵션)
+const numOfRows = 50; // 한 페이지 결과 수(옵션)
 
 const BooglingService = () => {
     const [aptInfo, setAptInfo] = useState([]);
@@ -91,7 +91,7 @@ const BooglingService = () => {
             //   "20",
             // "23",
             // "26",
-            "29",
+            // "29",
             "32",
             "35",
             // "38", // -> 여기 Best5에 이것만 가져오면 아파트명이 길어서 깨집니다.
