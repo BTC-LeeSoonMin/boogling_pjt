@@ -7,7 +7,7 @@ const AptDetailList = ({ AptPrice, AptDate, AptArea, AptFloor }) => {
             <li>{AptDate}</li>
             <li>{AptArea}</li>
             <li>{AptFloor}</li>
-        </ul>
+        </ul> 
     );
 }
 
